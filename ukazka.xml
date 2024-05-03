@@ -6,12 +6,16 @@
                 <idt>111</idt>
                 <jmeno>Radek</jmeno>
                 <prijmeni>Hrádek</prijmeni>
+                <datum_narozeni>2001-04-10</datum_narozeni>
+                <email>radek.hradek@gmail.com</email>
                 <foto src="radek.png"></foto>
             </partner>
             <partnerka>
                 <idt>222</idt>
                 <jmeno>Radka</jmeno>
                 <prijmeni>Hrádková</prijmeni>
+                <datum_narozeni>2002-04-10</datum_narozeni>
+                <email>radka.hradkova@gmail.com</email>
                 <foto src="radka.png"></foto>
             </partnerka>
             <klub divize="moravskoslezska">Starlight Dance Studio</klub>
@@ -21,12 +25,16 @@
                 <idt>333</idt>
                 <jmeno>Šimon</jmeno>
                 <prijmeni>Dominik</prijmeni>
+                <datum_narozeni>2002-02-20</datum_narozeni>
+                <email>simon.dominik@gmail.com</email>
                 <foto src="simon.png"></foto>
             </partner>
             <partnerka>
                 <idt>444</idt>
                 <jmeno>Dominika</jmeno>
                 <prijmeni>Šimonová</prijmeni>
+                <datum_narozeni>2003-10-10</datum_narozeni>
+                <email>dominika.simonova@gmail.com</email>
                 <foto src="dominika.png"></foto>
             </partnerka>
             <klub divize="stredoceska">Rhythm  Motion Dance Academy</klub>
@@ -36,12 +44,16 @@
                 <idt>555</idt>
                 <jmeno>Tomáš</jmeno>
                 <prijmeni>Koláč</prijmeni>
+                <datum_narozeni>2009-11-28</datum_narozeni>
+                <email>tomas.kolac@gmail.com</email>
                 <foto src="tomas.png"></foto>
             </partner>
             <partnerka>
                 <idt>666</idt>
                 <jmeno>Antonie</jmeno>
                 <prijmeni>Buchtíková</prijmeni>
+                <datum_narozeni>2009-3-5</datum_narozeni>
+                <email>antonie.buchtikova@gmail.com</email>
                 <foto src="anotnie.png"></foto>
             </partnerka>
             <klub divize="prazska">Dance Fusion Academy</klub>
@@ -51,12 +63,16 @@
                 <idt>666</idt>
                 <jmeno>Jan</jmeno>
                 <prijmeni>Hrouda</prijmeni>
+                <datum_narozeni>1985-04-10</datum_narozeni>
+                <email>jan.hrouda@gmail.com</email>
                 <foto src="jan.png"></foto>
             </partner>
             <partnerka>
                 <idt>777</idt>
                 <jmeno>Jana</jmeno>
                 <prijmeni>Hroudová</prijmeni>
+                <datum_narozeni>1987-7-20</datum_narozeni>
+                <email>jana.hroudova@gmail.com</email>
                 <foto src="jana.png"></foto>
             </partnerka>
             <klub divize="jihoceska">LaStDance</klub>

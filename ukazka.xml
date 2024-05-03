@@ -1,5 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kalendar_soutezi xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:vse:dvof01:kalendarSoutezi">
+    <pary>
+        <par id="1">
+            <partner>
+                <idt>111</idt>
+                <jmeno>Radek</jmeno>
+                <prijmeni>Hrádek</prijmeni>
+                <foto src="radek.png"></foto>
+            </partner>
+            <partnerka>
+                <idt>222</idt>
+                <jmeno>Radka</jmeno>
+                <prijmeni>Hrádková</prijmeni>
+                <foto src="radka.png"></foto>
+            </partnerka>
+            <klub divize="moravskoslezska">Starlight Dance Studio</klub>
+        </par>
+        <par id="2">
+            <partner>
+                <idt>333</idt>
+                <jmeno>Šimon</jmeno>
+                <prijmeni>Dominik</prijmeni>
+                <foto src="simon.png"></foto>
+            </partner>
+            <partnerka>
+                <idt>444</idt>
+                <jmeno>Dominika</jmeno>
+                <prijmeni>Šimonová</prijmeni>
+                <foto src="dominika.png"></foto>
+            </partnerka>
+            <klub divize="stredoceska">Rhythm  Motion Dance Academy</klub>
+        </par>
+        <par id="3">
+            <partner>
+                <idt>555</idt>
+                <jmeno>Tomáš</jmeno>
+                <prijmeni>Koláč</prijmeni>
+                <foto src="tomas.png"></foto>
+            </partner>
+            <partnerka>
+                <idt>666</idt>
+                <jmeno>Antonie</jmeno>
+                <prijmeni>Buchtíková</prijmeni>
+                <foto src="anotnie.png"></foto>
+            </partnerka>
+            <klub divize="prazska">Dance Fusion Academy</klub>
+        </par>
+        <par id="4">
+            <partner>
+                <idt>666</idt>
+                <jmeno>Jan</jmeno>
+                <prijmeni>Hrouda</prijmeni>
+                <foto src="jan.png"></foto>
+            </partner>
+            <partnerka>
+                <idt>777</idt>
+                <jmeno>Jana</jmeno>
+                <prijmeni>Hroudová</prijmeni>
+                <foto src="jana.png"></foto>
+            </partnerka>
+            <klub divize="jihoceska">LaStDance</klub>
+        </par>
+    </pary>
     <soutez>
         <nazev>Otrava Open 2024</nazev>
         <datum>2024-04-20</datum>
@@ -34,43 +96,17 @@
             <vykonostni_trida>A</vykonostni_trida>
             <vykonostni_trida>M</vykonostni_trida>
             <disciplina>LAT</disciplina>
-            <par>
-                <partner>
-                    <jmeno>Radek</jmeno>
-                    <prijmeni>Hrádek</prijmeni>
-                </partner>
-                <partnerka>
-                    <jmeno>Radka</jmeno>
-                    <prijmeni>Hrádková</prijmeni>
-                </partnerka>
-                <klub divize="moravskoslezska">Starlight Dance Studio</klub>
-            </par>
-            <par>
-                <partner>
-                    <jmeno>Šimon</jmeno>
-                    <prijmeni>Dominik</prijmeni>
-                </partner>
-                <partnerka>
-                    <jmeno>Dominika</jmeno>
-                    <prijmeni>Šimonová</prijmeni>
-                </partnerka>
-                <klub divize="stredoceska">Rhythm  Motion Dance Academy</klub>
-            </par>
+            <prihlasene_pary>
+                <par_id>1</par_id>
+                <par_id>2</par_id>
+            </prihlasene_pary>
         </kategorie>
         <kategorie typ="liga">
             <vekova_kategorie>Mládež</vekova_kategorie>
             <disciplina>STT</disciplina>
-            <par>
-                <partner>
-                    <jmeno>Tomáš</jmeno>
-                    <prijmeni>Koláč</prijmeni>
-                </partner>
-                <partnerka>
-                    <jmeno>Antonie</jmeno>
-                    <prijmeni>Buchtíková</prijmeni>
-                </partnerka>
-                <klub divize="prazska">Dance Fusion Academy</klub>
-            </par>
+            <prihlasene_pary>
+                <par_id>3</par_id>
+            </prihlasene_pary>
         </kategorie>
     </soutez>
     <soutez>
@@ -105,17 +141,9 @@
             <vekova_kategorie>Senioři</vekova_kategorie>
             <vykonostni_trida>C</vykonostni_trida>
             <disciplina>STT</disciplina>
-            <par>
-                <partner>
-                    <jmeno>Jan</jmeno>
-                    <prijmeni>Hrouda</prijmeni>
-                </partner>
-                <partnerka>
-                    <jmeno>Jana</jmeno>
-                    <prijmeni>Hroudová</prijmeni>
-                </partnerka>
-                <klub divize="jihoceska">LaStDance</klub>
-            </par>
+            <prihlasene_pary>
+                <par_id>4</par_id>
+            </prihlasene_pary>
         </kategorie>
     </soutez>
 </kalendar_soutezi>

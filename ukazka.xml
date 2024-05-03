@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kalendar_soutezi xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:vse:dvof01:kalendarSoutezi">
+    <soutez>
+        <nazev>Otrava Open 2024</nazev>
+        <datum>2024-04-20</datum>
+        <adresa>
+            <lokace>Ostravar Arena</lokace>
+            <ulice>U Areny</ulice>
+            <cislo_popisne>123</cislo_popisne>
+            <mesto>Ostrava</mesto>
+            <psc>243 01</psc>
+        </adresa>
+        <harmonogram>
+            <cas_otevreni_salu>09:00:00</cas_otevreni_salu>
+            <cas_zahajeni_souteze>10:00:00</cas_zahajeni_souteze>
+            <cas_konce_souteze>18:00:00</cas_konce_souteze>
+        </harmonogram>
+        <termin_prihlaseni>2024-03-31T23:00:00</termin_prihlaseni>
+        <porota>
+            <porotce>
+                <jmeno>Jan</jmeno>
+                <prijmeni>Klement</prijmeni>
+                <mesto>Ostrava</mesto>
+            </porotce>
+            <porotce>
+                <jmeno>Petr</jmeno>
+                <prijmeni>Zajíc</prijmeni>
+                <mesto>Mirošovice</mesto>
+            </porotce>
+        </porota>
+        <kategorie typ="poharova">
+            <vekova_kategorie>Dospělí</vekova_kategorie>
+            <vykonostni_trida>B</vykonostni_trida>
+            <vykonostni_trida>A</vykonostni_trida>
+            <vykonostni_trida>M</vykonostni_trida>
+            <disciplina>LAT</disciplina>
+            <par>
+                <partner>
+                    <jmeno>Radek</jmeno>
+                    <prijmeni>Hrádek</prijmeni>
+                </partner>
+                <partnerka>
+                    <jmeno>Radka</jmeno>
+                    <prijmeni>Hrádková</prijmeni>
+                </partnerka>
+                <klub divize="moravskoslezska">Starlight Dance Studio</klub>
+            </par>
+            <par>
+                <partner>
+                    <jmeno>Šimon</jmeno>
+                    <prijmeni>Dominik</prijmeni>
+                </partner>
+                <partnerka>
+                    <jmeno>Dominika</jmeno>
+                    <prijmeni>Šimonová</prijmeni>
+                </partnerka>
+                <klub divize="stredoceska">Rhythm  Motion Dance Academy</klub>
+            </par>
+        </kategorie>
+        <kategorie typ="liga">
+            <vekova_kategorie>Mládež</vekova_kategorie>
+            <disciplina>STT</disciplina>
+            <par>
+                <partner>
+                    <jmeno>Tomáš</jmeno>
+                    <prijmeni>Koláč</prijmeni>
+                </partner>
+                <partnerka>
+                    <jmeno>Antonie</jmeno>
+                    <prijmeni>Buchtíková</prijmeni>
+                </partnerka>
+                <klub divize="prazska">Dance Fusion Academy</klub>
+            </par>
+        </kategorie>
+    </soutez>
+    <soutez>
+        <nazev>Velká cena města Beroun</nazev>
+        <datum>2024-07-15</datum>
+        <adresa>
+            <lokace>Kulturní dům Plzeňka</lokace>
+            <ulice>Plzeňská</ulice>
+            <cislo_popisne>456</cislo_popisne>
+            <mesto>Beroun</mesto>
+            <psc>765 22</psc>
+        </adresa>
+        <harmonogram>
+            <cas_otevreni_salu>08:00:00</cas_otevreni_salu>
+            <cas_zahajeni_souteze>09:30:00</cas_zahajeni_souteze>
+            <cas_konce_souteze>17:00:00</cas_konce_souteze>
+        </harmonogram>
+        <termin_prihlaseni>2024-06-30T23:00:00</termin_prihlaseni>
+        <porota>
+            <porotce>
+                <jmeno>Jaroslav</jmeno>
+                <prijmeni>Ječmen</prijmeni>
+                <mesto>Pardubice</mesto>
+            </porotce>
+            <porotce>
+                <jmeno>Ludvík</jmeno>
+                <prijmeni>Ječmínek</prijmeni>
+                <mesto>Plzeň</mesto>
+            </porotce>
+        </porota>
+        <kategorie typ="postupova">
+            <vekova_kategorie>Senioři</vekova_kategorie>
+            <vykonostni_trida>C</vykonostni_trida>
+            <disciplina>STT</disciplina>
+            <par>
+                <partner>
+                    <jmeno>Jan</jmeno>
+                    <prijmeni>Hrouda</prijmeni>
+                </partner>
+                <partnerka>
+                    <jmeno>Jana</jmeno>
+                    <prijmeni>Hroudová</prijmeni>
+                </partnerka>
+                <klub divize="jihoceska">LaStDance</klub>
+            </par>
+        </kategorie>
+    </soutez>
+</kalendar_soutezi>

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<kalendar_soutezi xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:vse:dvof01:kalendarSoutezi">
+<kalendar_soutezi xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:vse:dvof01:kalendarSoutezi schema.xsd"
+ xmlns="urn:vse:dvof01:kalendarSoutezi">
     <pary>
         <par id="1">
             <partner>
@@ -52,7 +54,7 @@
                 <idt>666</idt>
                 <jmeno>Antonie</jmeno>
                 <prijmeni>Buchtíková</prijmeni>
-                <datum_narozeni>2009-3-5</datum_narozeni>
+                <datum_narozeni>2009-03-05</datum_narozeni>
                 <email>antonie.buchtikova@gmail.com</email>
                 <foto src="anotnie.png"></foto>
             </partnerka>
@@ -71,7 +73,7 @@
                 <idt>777</idt>
                 <jmeno>Jana</jmeno>
                 <prijmeni>Hroudová</prijmeni>
-                <datum_narozeni>1987-7-20</datum_narozeni>
+                <datum_narozeni>1987-07-20</datum_narozeni>
                 <email>jana.hroudova@gmail.com</email>
                 <foto src="jana.png"></foto>
             </partnerka>
@@ -79,7 +81,7 @@
         </par>
     </pary>
     <soutez>
-        <nazev>Otrava Open 2024</nazev>
+        <nazev>Ostrava Open 2024</nazev>
         <datum>2024-04-20</datum>
         <adresa>
             <lokace>Ostravar Arena</lokace>

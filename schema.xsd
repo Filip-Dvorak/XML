@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="urn:vse:dvof01:kalendarSoutezi"
+    xmlns="urn:vse:dvof01:kalendarSoutezi"
+    elementFormDefault="qualified">
+    
+    
+    <xs:element name="kalendar_soutezi">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="pary">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="par" type="parType" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="soutez" type="soutezType" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+
+    <xs:complexType name="parType">
+        <xs:sequence>
+            <xs:element name="partner" type="partnerType"/>
+            <xs:element name="partnerka" type="partnerType"/>
+            <xs:element name="klub">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute name="divize" type="xs:string" use="required"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="id" type="idType" use="required"/>
+    </xs:complexType>
+    
+    
+    <xs:simpleType name="idType">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    
+    <xs:complexType name="partnerType">
+        <xs:sequence>
+            <xs:element name="idt" type="idType"/>
+            <xs:element name="jmeno" type="xs:string"/>
+            <xs:element name="prijmeni" type="xs:string"/>
+            <xs:element name="datum_narozeni" type="xs:date"/>
+            <xs:element name="email" type="emailType"/>
+            <xs:element name="foto">
+                <xs:complexType>
+                    <xs:attribute name="src" type="xs:string" use="required"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name="emailType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[^@]+@[^@]+\.[^@]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    
+    <xs:complexType name="soutezType">
+        <xs:sequence>
+            <xs:element name="nazev" type="xs:string"/>
+            <xs:element name="datum" type="xs:date"/>
+            <xs:element name="adresa" type="adresaType"/>
+            <xs:element name="harmonogram" type="harmonogramType"/>
+            <xs:element name="termin_prihlaseni" type="xs:dateTime"/>
+            <xs:element name="porota" type="porotaType"/>
+            <xs:element name="kategorie" type="kategorieType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="adresaType">
+        <xs:sequence>
+            <xs:element name="lokace" type="xs:string"/>
+            <xs:element name="ulice" type="xs:string"/>
+            <xs:element name="cislo_popisne" type="xs:int"/>
+            <xs:element name="mesto" type="xs:string"/>
+            <xs:element name="psc" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="harmonogramType">
+        <xs:sequence>
+            <xs:element name="cas_otevreni_salu" type="xs:time"/>
+            <xs:element name="cas_zahajeni_souteze" type="xs:time"/>
+            <xs:element name="cas_konce_souteze" type="xs:time"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="porotaType">
+        <xs:sequence>
+            <xs:element name="porotce" type="porotceType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="porotceType">
+        <xs:sequence>
+            <xs:element name="jmeno" type="xs:string"/>
+            <xs:element name="prijmeni" type="xs:string"/>
+            <xs:element name="mesto" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="kategorieType">
+        <xs:sequence>
+            <xs:element name="vekova_kategorie" type="xs:string"/>
+            <xs:element name="vykonostni_trida" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="disciplina" type="xs:string"/>
+            <xs:element name="prihlasene_pary">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="par_id" type="idType" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="typ" type="xs:string" use="required"/>
+    </xs:complexType>
+    
+    
+    
+</xs:schema>

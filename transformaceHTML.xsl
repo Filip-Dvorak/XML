@@ -4,12 +4,12 @@
     <xsl:output method="html" version="5" encoding="UTF-8"/>
     <xsl:output method="html" version="5" name="html5"/>
 
-    <!-- Identity template: copy all elements and attributes to the output -->
+    <!-- Root xml -->
     <xsl:template match="/">
             <xsl:apply-templates/>
     </xsl:template>
 
-    <!-- Transform ks:kalendar_soutezi element into HTML -->
+    <!-- Hlavni stranka kalendare -->
     <xsl:template match="ks:kalendar_soutezi">
         <html>
             <head>
@@ -60,58 +60,8 @@
         </html>
     </xsl:template>
 
-    <!-- Transform ks:soutez element into HTML table row with a link to detail page -->
-    <xsl:template match="ks:soutez">
-        <html>
-            <head>
-                <title>Kalendář soutěží</title>
-                <style>
-                    body {
-                        font-family: Arial, sans-serif;
-                    }
-                    h1 {
-                        color: navy;
-                    }
-                    table {
-                        border-collapse: collapse;
-                        width: 100%;
-                    }
-                    th,
-                    td {
-                        border: 1px solid #dddddd;
-                        text-align: left;
-                        padding: 8px;
-                    }
-                    th {
-                        background-color: #f2f2f2;
-                    }
-                    a {
-                        text-decoration: none;
-                        color: blue;
-                    }
-                    a:hover {
-                        text-decoration: underline;
-                    }</style>
-            </head>
-            <body>
-                <h1>Kalendář soutěží</h1>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Soutěž</th>
-                            <th>Datum</th>
-                            <th>Místo konání</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <xsl:apply-templates select="ks:soutez"/>
-                    </tbody>
-                </table>
-            </body>
-        </html>
-    </xsl:template>
 
-    <!-- Transform ks:soutez element into HTML table row with a link to detail page -->
+    <!-- Vytvoření jednotlivých záznamů pro každou soutěž  -->
     <xsl:template match="ks:soutez">
         <xsl:variable name="detailSouteze" select="concat(generate-id(), '.html')"/>
         <tr>
@@ -121,13 +71,14 @@
                 </a>
             </td>
             <td>
-                <xsl:value-of select="ks:datum"/>
+                <xsl:value-of select="format-date(ks:datum,'[D]. [M]. [Y]')"/>
             </td>
             <td>
                 <xsl:value-of select="concat(ks:adresa/ks:lokace,' - ', ks:adresa/ks:mesto)"/>
             </td>
         </tr>
-        <!-- Generate separate HTML file for detailed information -->
+        
+        <!-- Vygenerovani html souboru pro každou soutěž -->
         <xsl:result-document href="{$detailSouteze}" format="html5">
             <html>
                 <head>
@@ -173,7 +124,7 @@
                         <tr>
                             <th>Datum</th>
                             <td>
-                                <strong><xsl:value-of select="ks:datum"/></strong>
+                                <strong><xsl:value-of select="format-date(ks:datum, '[D]. [M]. [Y]')"/></strong>
                             </td>
                         </tr>
                         <tr>
@@ -191,17 +142,17 @@
                                     <li>
                                         <strong>Otevření sálu: </strong>
                                         <xsl:value-of
-                                            select="ks:harmonogram/ks:cas_otevreni_salu"/>
+                                            select="format-time(ks:harmonogram/ks:cas_otevreni_salu,'[H01]:[m01]')"/>
                                     </li>
                                     <li>
                                         <strong>Zahájení soutěže: </strong>
                                         <xsl:value-of
-                                            select="ks:harmonogram/ks:cas_zahajeni_souteze"/>
+                                            select="format-time(ks:harmonogram/ks:cas_zahajeni_souteze,'[H01]:[m01]')"/>
                                     </li>
                                     <li>
                                         <strong>Konec soutěže: </strong>
                                         <xsl:value-of
-                                            select="ks:harmonogram/ks:cas_konce_souteze"/>
+                                            select="format-time(ks:harmonogram/ks:cas_konce_souteze,'[H01]:[m01]')"/>
                                     </li>
                                 </ul>
                             </td>
@@ -209,7 +160,7 @@
                         <tr>
                             <th>Termín přihlášení</th>
                             <td>
-                                <strong><i><xsl:value-of select="ks:termin_prihlaseni"/></i></strong>
+                                <strong><i><xsl:value-of select="format-dateTime(ks:termin_prihlaseni,' [M]. [D]. [Y],  [H01]:[m01] ')"/></i></strong>
                             </td>
                         </tr>
                         <tr>
@@ -234,7 +185,7 @@
         </xsl:result-document>
     </xsl:template>
 
-    <!-- Transform ks:porotce element into HTML list item -->
+    <!-- Sekce poroty -->
     <xsl:template match="ks:porotce">
         <div class="porota">
             <ul>
@@ -245,7 +196,7 @@
         </div>
     </xsl:template>
 
-    <!-- Transform ks:kategorie element into HTML list item -->
+    <!-- Sekce kategorii-->
     <xsl:template match="ks:kategorie">
         <li>
             <strong>Typ: </strong>
@@ -272,7 +223,7 @@
         </li>
     </xsl:template>
 
-    <!-- Transform ks:par_id element into HTML table row -->
+    <!-- Zaplnění tabulek kategorii soutěžícími s koresponudjícím par_id -->
     <xsl:template match="ks:par_id">
         <xsl:variable name="par_id" select="."/>
         <xsl:variable name="par" select="//ks:pary/ks:par[@id = $par_id]"/>
@@ -291,11 +242,11 @@
                 <xsl:value-of select="$par/ks:klub"/>
             </td>
             <td>
-                <!-- Link to detail page -->
                 <a href="{concat('detail_', $par_id, '.html')}">Detail</a>
             </td>
         </tr>
-        <!-- Generate separate HTML file for each pair -->
+        
+        <!-- Vygenerovaní html dokumentu pro každý pár -->
         <xsl:result-document href="{concat('detail_', $par_id, '.html')}" format="html5">
             <html lang="cs">
             <head>
@@ -378,7 +329,7 @@
             <body>
                 
                 <div class="home-container">
-                    <div class="home-container1">
+                    <div class="home-con tainer1">
                         <img
                             src="{$par/ks:partnerka/ks:foto/@src}"
                             alt="image"

@@ -1,44 +1,85 @@
-<!DOCTYPE HTML><html>
+<!DOCTYPE HTML><html lang="cs">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <title>Detail páru</title>
-      <style>
-                        body {
-                            font-family: Arial, sans-serif;
-                        }
-                        h2 {
-                            color: #006400;
-                        }
-                        table {
-                            border-collapse: collapse;
-                            width: 100%;
-                        }
-                        th,
-                        td {
-                            border: 1px solid #dddddd;
-                            text-align: left;
-                            padding: 8px;
-                        }
-                        th {
-                            background-color: #f2f2f2;
-                        }
-                        strong {
-                            color: #800000;
-                        }
-                    </style>
+      <title>Detail</title>
+      <style>.home-container {
+                    width: 100%;
+                    display: flex;
+                    min-height: 100vh;
+                    align-items: center;
+                    flex-direction: column;
+                    justify-content: center;
+                    }
+                    .home-container1 {
+                    top: 30%;
+                    right: 25%;
+                    width: 483px;
+                    height: 849px;
+                    display: flex;
+                    position: absolute;
+                    align-self: center;
+                    align-items: center;
+                    flex-direction: column;
+                    justify-content: center;
+                    }
+                    .home-image {
+                    top: 0px;
+                    left: 0px;
+                    right: 0px;
+                    width: 200px;
+                    position: absolute;
+                    object-fit: cover;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-bottom: auto;
+                    }
+                    .home-text {
+                    padding-bottom: 5px;
+                    }
+                    .home-text1 {
+                    padding-bottom: 5px;
+                    }
+                    .home-text2 {
+                    padding-bottom: 5px;
+                    }
+                    .home-container2 {
+                    top: 30%;
+                    left: 25%;
+                    width: 483px;
+                    height: 849px;
+                    display: flex;
+                    position: absolute;
+                    align-self: center;
+                    align-items: center;
+                    flex-direction: column;
+                    justify-content: center;
+                    }
+                    .home-image1 {
+                    top: 0px;
+                    left: 0px;
+                    right: 0px;
+                    width: 200px;
+                    position: absolute;
+                    object-fit: cover;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-bottom: auto;
+                    }
+                    .home-text3 {
+                    padding-bottom: 5px;
+                    }
+                    .home-text4 {
+                    padding-bottom: 5px;
+                    }
+                    .home-text5 {
+                    padding-bottom: 5px;
+                    }
+                </style>
    </head>
    <body>
-      <h2>Detail páru</h2>
-      <table>
-         <tr>
-            <th>Partner</th>
-            <th>Partnerka</th>
-            <th>Klub</th>
-         </tr>
-         <tr>
-            <td>Šimon Dominik</td>
-            <td>Dominika Šimonová</td>
-            <td>Rhythm  Motion Dance Academy</td>
-         </tr>
-      </table><img src="simon.png"></body>
+      <div class="home-container">
+         <div class="home-container1"><img src="dominika.png" alt="image" class="home-image"><span class="home-text">Dominika</span><span class="home-text1">Šimonová</span><span class="home-text2">dominika.simonova@gmail.com</span></div>
+         <div class="home-container2"><img src="simon.png" alt="image" class="home-image1"><span class="home-text3">Šimon</span><span class="home-text4">Dominik</span><span class="home-text5">simon.dominik@gmail.com</span></div>
+      </div>
+   </body>
 </html>

@@ -297,60 +297,109 @@
         </tr>
         <!-- Generate separate HTML file for each pair -->
         <xsl:result-document href="{concat('detail_', $par_id, '.html')}" format="html5">
-            <html>
-                <head>
-                    <title>Detail páru</title>
-                    <style>
-                        body {
-                            font-family: Arial, sans-serif;
-                        }
-                        h2 {
-                            color: #006400;
-                        }
-                        table {
-                            border-collapse: collapse;
-                            width: 100%;
-                        }
-                        th,
-                        td {
-                            border: 1px solid #dddddd;
-                            text-align: left;
-                            padding: 8px;
-                        }
-                        th {
-                            background-color: #f2f2f2;
-                        }
-                        strong {
-                            color: #800000;
-                        }
-                    </style>
-                </head>
-                <body>
-                    <h2>Detail páru</h2>
-                    <table>
-                        <tr>
-                            <th>Partner</th>
-                            <th>Partnerka</th>
-                            <th>Klub</th>
-                        </tr>
-                        <tr>
-                            <td>
-                                <xsl:value-of select="$par/ks:partner/ks:jmeno"/>
-                                <xsl:text> </xsl:text>
-                                <xsl:value-of select="$par/ks:partner/ks:prijmeni"/>
-                            </td>
-                            <td>
-                                <xsl:value-of select="$par/ks:partnerka/ks:jmeno"/>
-                                <xsl:text> </xsl:text>
-                                <xsl:value-of select="$par/ks:partnerka/ks:prijmeni"/>
-                            </td>
-                            <td>
-                                <xsl:value-of select="$par/ks:klub"/>
-                            </td>
-                        </tr>
-                    </table>
-                    <img src="{$par/ks:partner/ks:foto/@src}"></img>
-                </body>
+            <html lang="cs">
+            <head>
+                <title>Detail</title>
+                
+                <style>.home-container {
+                    width: 100%;
+                    display: flex;
+                    min-height: 100vh;
+                    align-items: center;
+                    flex-direction: column;
+                    justify-content: center;
+                    }
+                    .home-container1 {
+                    top: 30%;
+                    right: 25%;
+                    width: 483px;
+                    height: 849px;
+                    display: flex;
+                    position: absolute;
+                    align-self: center;
+                    align-items: center;
+                    flex-direction: column;
+                    justify-content: center;
+                    }
+                    .home-image {
+                    top: 0px;
+                    left: 0px;
+                    right: 0px;
+                    width: 200px;
+                    position: absolute;
+                    object-fit: cover;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-bottom: auto;
+                    }
+                    .home-text {
+                    padding-bottom: 5px;
+                    }
+                    .home-text1 {
+                    padding-bottom: 5px;
+                    }
+                    .home-text2 {
+                    padding-bottom: 5px;
+                    }
+                    .home-container2 {
+                    top: 30%;
+                    left: 25%;
+                    width: 483px;
+                    height: 849px;
+                    display: flex;
+                    position: absolute;
+                    align-self: center;
+                    align-items: center;
+                    flex-direction: column;
+                    justify-content: center;
+                    }
+                    .home-image1 {
+                    top: 0px;
+                    left: 0px;
+                    right: 0px;
+                    width: 200px;
+                    position: absolute;
+                    object-fit: cover;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-bottom: auto;
+                    }
+                    .home-text3 {
+                    padding-bottom: 5px;
+                    }
+                    .home-text4 {
+                    padding-bottom: 5px;
+                    }
+                    .home-text5 {
+                    padding-bottom: 5px;
+                    }
+                </style>
+            </head>
+            <body>
+                
+                <div class="home-container">
+                    <div class="home-container1">
+                        <img
+                            src="{$par/ks:partnerka/ks:foto/@src}"
+                            alt="image"
+                            class="home-image"
+                        />
+                        <span class="home-text"><xsl:value-of select="$par/ks:partnerka/ks:jmeno"/></span>
+                        <span class="home-text1"><xsl:value-of select="$par/ks:partnerka/ks:prijmeni"/></span>
+                        <span class="home-text2"><xsl:value-of select="$par/ks:partnerka/ks:email"/></span>
+                    </div>
+                    <div class="home-container2">
+                        <img
+                            src="{$par/ks:partner/ks:foto/@src}"
+                            alt="image"
+                            class="home-image1"
+                        />
+                        <span class="home-text3"><xsl:value-of select="$par/ks:partner/ks:jmeno"/></span>
+                        <span class="home-text4"><xsl:value-of select="$par/ks:partner/ks:prijmeni"/></span>
+                        <span class="home-text5"><xsl:value-of select="$par/ks:partner/ks:email"/></span>
+                    </div>
+                </div>
+            </body>
             </html>
         </xsl:result-document>
     </xsl:template>

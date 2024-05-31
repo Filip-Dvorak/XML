@@ -199,14 +199,7 @@
     <!-- Sekce kategorii-->
     <xsl:template match="ks:kategorie">
         <li>
-            <strong>Typ: </strong>
-            <xsl:value-of select="@typ"/>
-            <strong>Věková kategorie: </strong>
-            <xsl:value-of select="ks:vekova_kategorie"/>
-            <strong>Třída: </strong>
-            <xsl:value-of select="ks:vykonostni_trida"/>
-            <strong>Disciplina: </strong>
-            <xsl:value-of select="ks:disciplina"/>
+            <strong><xsl:value-of select="concat(ks:vekova_kategorie,' - ', string-join(ks:vykonostni_trida, '-'), ' - ', ks:disciplina , ' (', @typ,')')"/></strong>
             <table>
                 <thead>
                     <tr>

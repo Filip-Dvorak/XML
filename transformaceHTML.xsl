@@ -190,7 +190,7 @@
         <div class="porota">
             <ul>
                 <li>
-                    <xsl:value-of select="ks:jmeno"/> <xsl:text> </xsl:text> <xsl:value-of select="ks:prijmeni"/> <xsl:text> - </xsl:text> <xsl:value-of select="ks:mesto"/>
+                    <xsl:value-of select="ks:jmeno"/> <xsl:text> </xsl:text> <xsl:value-of select="ks:prijmeni"/> <xsl:text> – </xsl:text> <xsl:value-of select="ks:mesto"/>
                 </li>
             </ul>
         </div>
@@ -199,7 +199,7 @@
     <!-- Sekce kategorii-->
     <xsl:template match="ks:kategorie">
         <li>
-            <strong><xsl:value-of select="concat(ks:vekova_kategorie,' - ', string-join(ks:vykonostni_trida, '-'), ' - ', ks:disciplina , ' (', @typ,')')"/></strong>
+            <strong><xsl:value-of select="concat(ks:vekova_kategorie,' – ', string-join(ks:vykonostni_trida, ''), ' ', ks:disciplina , ' (', @typ,')')"/></strong>
             <table>
                 <thead>
                     <tr>

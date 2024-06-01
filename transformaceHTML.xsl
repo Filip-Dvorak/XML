@@ -90,7 +90,7 @@
                             font-family: Arial, sans-serif;
                         }
                         h2 {
-                            color: #006400;
+                            color: navy;
                         }
                         table {
                             border-collapse: collapse;

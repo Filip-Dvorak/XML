@@ -23,9 +23,9 @@
 
     <xs:complexType name="parType">
         <xs:sequence>
-            <xs:element name="partner" type="partnerType"/>
-            <xs:element name="partnerka" type="partnerType"/>
-            <xs:element name="klub">
+            <xs:element name="partner" type="partnerType"  maxOccurs="1"/>
+            <xs:element name="partnerka" type="partnerType"  maxOccurs="1"/>
+            <xs:element name="klub"  maxOccurs="1">
                 <xs:complexType>
                     <xs:simpleContent>
                         <xs:extension base="xs:string">
@@ -112,8 +112,8 @@
     <xs:complexType name="kategorieType">
         <xs:sequence>
             <xs:element name="vekova_kategorie" type="xs:string"/>
-            <xs:element name="vykonostni_trida" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="disciplina" type="xs:string"/>
+            <xs:element name="vykonostni_trida" type="vykonostniTridaType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="disciplina" type="disciplinaType"/>
             <xs:element name="prihlasene_pary">
                 <xs:complexType>
                     <xs:sequence>
@@ -125,6 +125,23 @@
         <xs:attribute name="typ" type="xs:string" use="required"/>
     </xs:complexType>
     
+    <xs:simpleType name="disciplinaType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="LAT"></xs:enumeration>
+            <xs:enumeration value="STT"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
     
+    <xs:simpleType name="vykonostniTridaType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value=""></xs:enumeration>
+            <xs:enumeration value="E"></xs:enumeration>
+            <xs:enumeration value="D"></xs:enumeration>
+            <xs:enumeration value="C"></xs:enumeration>
+            <xs:enumeration value="B"></xs:enumeration>
+            <xs:enumeration value="A"></xs:enumeration>
+            <xs:enumeration value="M"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
     
 </xs:schema>

@@ -93,7 +93,7 @@
         <harmonogram>
             <cas_otevreni_salu>09:00:00</cas_otevreni_salu>
             <cas_zahajeni_souteze>10:00:00</cas_zahajeni_souteze>
-            <cas_konce_souteze>18:00:00</cas_konce_souteze>
+            <cas_konce_souteze>20:00:00</cas_konce_souteze>
         </harmonogram>
         <termin_prihlaseni>2024-03-31T23:00:00</termin_prihlaseni>
         <porota>

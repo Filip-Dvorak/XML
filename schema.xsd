@@ -2,42 +2,51 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     targetNamespace="urn:vse:dvof01:kalendarSoutezi"
     xmlns="urn:vse:dvof01:kalendarSoutezi"
+    xmlns:ks="rn:vse:dvof01:kalendarSoutezi"
     elementFormDefault="qualified">
     
     
-    <xs:element name="kalendar_soutezi">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="pary">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="par" type="parType" maxOccurs="unbounded"/>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="soutez" type="soutezType" maxOccurs="unbounded"/>
-            </xs:sequence>
-        </xs:complexType>
+    <xs:element name="kalendar_soutezi" type="kalendarSouteziType">
+        
     </xs:element>
     
+    
+    <xs:complexType name="kalendarSouteziType">
+        <xs:sequence>
+            <xs:element name="pary" type="paryType">
+                <xs:unique name="uniqueParID">
+                    <xs:selector xpath="ks:par"></xs:selector>
+                    <xs:field xpath="@id"></xs:field>
+                </xs:unique>
+            </xs:element>
+            <xs:element name="soutez" type="soutezType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="paryType">
+        <xs:sequence>
+            <xs:element name="par" type="parType" maxOccurs="unbounded">
+               
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
 
     <xs:complexType name="parType">
         <xs:sequence>
             <xs:element name="partner" type="partnerType"  maxOccurs="1"/>
             <xs:element name="partnerka" type="partnerType"  maxOccurs="1"/>
-            <xs:element name="klub"  maxOccurs="1">
-                <xs:complexType>
-                    <xs:simpleContent>
-                        <xs:extension base="xs:string">
-                            <xs:attribute name="divize" type="xs:string" use="required"/>
-                        </xs:extension>
-                    </xs:simpleContent>
-                </xs:complexType>
-            </xs:element>
+            <xs:element name="klub" type="klubType" maxOccurs="1"/>
         </xs:sequence>
         <xs:attribute name="id" type="idType" use="required"/>
     </xs:complexType>
     
+    <xs:complexType name="klubType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="divize" type="xs:string" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
     
     <xs:simpleType name="idType">
         <xs:restriction base="xs:string"/>
@@ -50,12 +59,13 @@
             <xs:element name="prijmeni" type="xs:string"/>
             <xs:element name="datum_narozeni" type="xs:date"/>
             <xs:element name="email" type="emailType"/>
-            <xs:element name="foto">
-                <xs:complexType>
-                    <xs:attribute name="src" type="xs:string" use="required"/>
-                </xs:complexType>
+            <xs:element name="foto" type="fotoType">
             </xs:element>
         </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="fotoType">
+        <xs:attribute name="src" type="xs:string" use="required"/>
     </xs:complexType>
     
     <xs:simpleType name="emailType">
@@ -114,15 +124,17 @@
             <xs:element name="vekova_kategorie" type="xs:string"/>
             <xs:element name="vykonostni_trida" type="vykonostniTridaType" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="disciplina" type="disciplinaType"/>
-            <xs:element name="prihlasene_pary">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="par_id" type="idType" maxOccurs="unbounded"/>
-                    </xs:sequence>
-                </xs:complexType>
+            <xs:element name="prihlasene_pary" type="prihlaseneParyType">
             </xs:element>
         </xs:sequence>
         <xs:attribute name="typ" type="xs:string" use="required"/>
+    </xs:complexType>
+    
+    
+    <xs:complexType name="prihlaseneParyType">
+        <xs:sequence>
+            <xs:element name="par_id" type="idType" maxOccurs="unbounded"/>
+        </xs:sequence>
     </xs:complexType>
     
     <xs:simpleType name="disciplinaType">

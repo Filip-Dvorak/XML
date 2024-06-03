@@ -26,13 +26,13 @@
     <xs:complexType name="paryType">
         <xs:sequence>
             <xs:element name="par" type="parType" maxOccurs="unbounded">
-               
             </xs:element>
         </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="parType">
         <xs:sequence>
+            <xs:element name="trida" type="vykonostniTridaType"></xs:element>
             <xs:element name="partner" type="partnerType"  maxOccurs="1"/>
             <xs:element name="partnerka" type="partnerType"  maxOccurs="1"/>
             <xs:element name="klub" type="klubType" maxOccurs="1"/>

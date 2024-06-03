@@ -36,7 +36,13 @@
         </sch:rule>
     </sch:pattern>
     
-    
+    <sch:pattern id="Spravnatrida">
+        <sch:rule context="ks:prihlasene_pary/ks:par_id">
+            <sch:let name="typ" value="../../@typ"></sch:let>
+            <sch:let name="trida" value="//ks:pary/ks:par[@id=current()]/ks:trida"></sch:let>
+            <sch:assert test="(../../ks:vykonostni_trida = $trida and not($typ = 'liga')) or ($typ = 'liga')" >Soutěže se mohou účastnit jen páry se odpovídající třídou.</sch:assert>
+        </sch:rule>
+    </sch:pattern>
     
     
     

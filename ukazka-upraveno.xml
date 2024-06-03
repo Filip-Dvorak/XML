@@ -4,6 +4,7 @@
  xmlns="urn:vse:dvof01:kalendarSoutezi">
     <pary>
         <par id="1">
+            <trida>B</trida>
             <partner>
                 <idt>111</idt>
                 <jmeno>Radek</jmeno>
@@ -23,6 +24,7 @@
             <klub divize="moravskoslezska">Starlight Dance Studio</klub>
         </par>
         <par id="2">
+            <trida>A</trida>
             <partner>
                 <idt>333</idt>
                 <jmeno>Šimon</jmeno>
@@ -42,6 +44,7 @@
             <klub divize="stredoceska">Rhythm  Motion Dance Academy</klub>
         </par>
         <par id="3">
+            <trida>B</trida>
             <partner>
                 <idt>555</idt>
                 <jmeno>Tomáš</jmeno>
@@ -61,6 +64,7 @@
             <klub divize="prazska">Dance Fusion Academy</klub>
         </par>
         <par id="4">
+            <trida>C</trida>
             <partner>
                 <idt>666</idt>
                 <jmeno>Jan</jmeno>

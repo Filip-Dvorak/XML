@@ -11,36 +11,10 @@
 
     <!-- Hlavni stranka kalendare -->
     <xsl:template match="ks:kalendar_soutezi">
-        <html>
-            <head>
+        <html lang="cs">
+            <head >
                 <title>Kalendář soutěží</title>
-                <style>
-                    body {
-                        font-family: Arial, sans-serif;
-                    }
-                    h1 {
-                        color: navy;
-                    }
-                    table {
-                        border-collapse: collapse;
-                        width: 100%;
-                    }
-                    th,
-                    td {
-                        border: 1px solid #dddddd;
-                        text-align: left;
-                        padding: 8px;
-                    }
-                    th {
-                        background-color: #f2f2f2;
-                    }
-                    a {
-                        text-decoration: none;
-                        color: blue;
-                    }
-                    a:hover {
-                        text-decoration: underline;
-                    }</style>
+                <link rel="stylesheet" href="styly.css"/>
             </head>
             <body>
                 <h1>Kalendář soutěží</h1>
@@ -80,43 +54,15 @@
         
         <!-- Vygenerovani html souboru pro každou soutěž -->
         <xsl:result-document href="{$detailSouteze}" format="html5">
-            <html>
-                <head>
+            <html lang="cs">
+                <head >
                     <title>
                         <xsl:value-of select="ks:nazev"/>
                     </title>
-                    <style>
-                        body {
-                            font-family: Arial, sans-serif;
-                        }
-                        h2 {
-                            color: navy;
-                        }
-                        table {
-                            border-collapse: collapse;
-                            width: 100%;
-                        }
-                        th,
-                        td {
-                            border: 1px solid #dddddd;
-                            text-align: left;
-                            padding: 8px;
-                        }
-                        th {
-                            background-color: #f2f2f2;
-                        }
-                        strong {
-                            color: #800000;
-                        }
-                        ul {
-                            list-style-type: none;
-                        }
-                        .porota ul{ 
-                                list-style: circle;
-                        }
-                    </style>
+                    <link rel="stylesheet" href="styly.css"/>
                 </head>
                 <body>
+                    <h1><a href="kalendar.html">Kalendář soutěží</a></h1>
                     <h2>
                         <xsl:value-of select="ks:nazev"/>
                     </h2>
@@ -244,83 +190,10 @@
             <html lang="cs">
                 <head>
                     <title>Detail</title>
-                    
-                    <style>.home-container {
-                        width: 100%;
-                        display: flex;
-                        min-height: 100vh;
-                        align-items: center;
-                        flex-direction: column;
-                        justify-content: center;
-                        }
-                        .home-container1 {
-                        top: 30%;
-                        right: 25%;
-                        width: 483px;
-                        height: 849px;
-                        display: flex;
-                        position: absolute;
-                        align-self: center;
-                        align-items: center;
-                        flex-direction: column;
-                        justify-content: center;
-                        }
-                        .home-image {
-                        top: 0px;
-                        left: 0px;
-                        right: 0px;
-                        width: 200px;
-                        position: absolute;
-                        object-fit: cover;
-                        margin-left: auto;
-                        margin-right: auto;
-                        margin-bottom: auto;
-                        }
-                        .home-text {
-                        padding-bottom: 5px;
-                        }
-                        .home-text1 {
-                        padding-bottom: 5px;
-                        }
-                        .home-text2 {
-                        padding-bottom: 5px;
-                        }
-                        .home-container2 {
-                        top: 30%;
-                        left: 25%;
-                        width: 483px;
-                        height: 849px;
-                        display: flex;
-                        position: absolute;
-                        align-self: center;
-                        align-items: center;
-                        flex-direction: column;
-                        justify-content: center;
-                        }
-                        .home-image1 {
-                        top: 0px;
-                        left: 0px;
-                        right: 0px;
-                        width: 200px;
-                        position: absolute;
-                        object-fit: cover;
-                        margin-left: auto;
-                        margin-right: auto;
-                        margin-bottom: auto;
-                        }
-                        .home-text3 {
-                        padding-bottom: 5px;
-                        }
-                        .home-text4 {
-                        padding-bottom: 5px;
-                        }
-                        .home-text5 {
-                        padding-bottom: 5px;
-                        }
-                    </style>
+                    <link rel="stylesheet" href="profileDetail.css"/>
                 </head>
                 <body>
-                    
+                    <h1><a href="javascript:history.back()">Kalendář soutěží</a></h1>
                     <div class="home-container">
                         <div class="home-container1">
                             <img

@@ -44,5 +44,13 @@
         </sch:rule>
     </sch:pattern>
     
+    <sch:pattern id="datumNarozeni">
+        <sch:rule context="ks:par">
+            <sch:assert test="(xs:date(current-date()) &gt; xs:date(ks:partner/ks:datum_narozeni)) and (xs:date(current-date()) &gt; xs:date(ks:partnerka/ks:datum_narozeni))">
+                Datum narození nesmí být v budoucnosti
+            </sch:assert>
+        </sch:rule>
+    </sch:pattern>
+    
 </sch:schema>
 

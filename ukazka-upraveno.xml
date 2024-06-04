@@ -77,11 +77,31 @@
                 <idt>777</idt>
                 <jmeno>Jana</jmeno>
                 <prijmeni>Hroudová</prijmeni>
-                <datum_narozeni>1987-07-20</datum_narozeni>
+                <datum_narozeni>1985-07-20</datum_narozeni>
                 <email>jana.hroudova@gmail.com</email>
                 <foto src="jana.png"></foto>
             </partnerka>
             <klub divize="jihoceska">LaStDance</klub>
+        </par>
+        <par id="5">
+            <trida>M</trida>
+            <partner>
+                <idt>666</idt>
+                <jmeno>Vladislav</jmeno>
+                <prijmeni>Kadlec</prijmeni>
+                <datum_narozeni>1985-04-10</datum_narozeni>
+                <email>vlada.kadlec@gmail.com</email>
+                <foto src="vladislav.png"></foto>
+            </partner>
+            <partnerka>
+                <idt>999</idt>
+                <jmeno>Nino</jmeno>
+                <prijmeni>Dzneladze</prijmeni>
+                <datum_narozeni>1987-07-20</datum_narozeni>
+                <email>nino.dzneladze@gmail.com</email>
+                <foto src="nino.png"></foto>
+            </partnerka>
+            <klub divize="prazska">LaStDance</klub>
         </par>
     </pary>
     <soutez>
@@ -121,6 +141,7 @@
             <prihlasene_pary>
                 <par_id>1</par_id>
                 <par_id>2</par_id>
+                <par_id>5</par_id>
             </prihlasene_pary>
         </kategorie>
         <kategorie typ="liga">

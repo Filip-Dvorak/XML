@@ -6,13 +6,13 @@
 
     <!-- Root xml -->
     <xsl:template match="/">
-            <xsl:apply-templates/>
+        <xsl:apply-templates/>
     </xsl:template>
 
     <!-- Hlavni stranka kalendare -->
     <xsl:template match="ks:kalendar_soutezi">
         <html lang="cs">
-            <head >
+            <head>
                 <title>Kalendář soutěží</title>
                 <link rel="stylesheet" href="styly.css"/>
             </head>
@@ -45,24 +45,26 @@
                 </a>
             </td>
             <td>
-                <xsl:value-of select="format-date(ks:datum,'[D]. [M]. [Y]')"/>
+                <xsl:value-of select="format-date(ks:datum, '[D]. [M]. [Y]')"/>
             </td>
             <td>
-                <xsl:value-of select="concat(ks:adresa/ks:lokace,' - ', ks:adresa/ks:mesto)"/>
+                <xsl:value-of select="concat(ks:adresa/ks:lokace, ' - ', ks:adresa/ks:mesto)"/>
             </td>
         </tr>
-        
+
         <!-- Vygenerovani html souboru pro každou soutěž -->
         <xsl:result-document href="{$detailSouteze}" format="html5">
             <html lang="cs">
-                <head >
+                <head>
                     <title>
                         <xsl:value-of select="ks:nazev"/>
                     </title>
                     <link rel="stylesheet" href="styly.css"/>
                 </head>
                 <body>
-                    <h1><a href="kalendar.html">Kalendář soutěží</a></h1>
+                    <h1>
+                        <a href="kalendar.html">Kalendář soutěží</a>
+                    </h1>
                     <h2>
                         <xsl:value-of select="ks:nazev"/>
                     </h2>
@@ -70,15 +72,19 @@
                         <tr>
                             <th>Datum</th>
                             <td>
-                                <strong><xsl:value-of select="format-date(ks:datum, '[D]. [M]. [Y]')"/></strong>
+                                <strong>
+                                    <xsl:value-of select="format-date(ks:datum, '[D]. [M]. [Y]')"/>
+                                </strong>
                             </td>
                         </tr>
                         <tr>
                             <th>Adresa</th>
                             <td>
-                                <strong><xsl:value-of
-                                    select="concat(ks:adresa/ks:lokace, ', ', ks:adresa/ks:ulice, ' ', ks:adresa/ks:cislo_popisne, ', ', ks:adresa/ks:mesto, ' ', ks:adresa/ks:psc)"
-                                /></strong>
+                                <strong>
+                                    <xsl:value-of
+                                        select="concat(ks:adresa/ks:lokace, ', ', ks:adresa/ks:ulice, ' ', ks:adresa/ks:cislo_popisne, ', ', ks:adresa/ks:mesto, ' ', ks:adresa/ks:psc)"
+                                    />
+                                </strong>
                             </td>
                         </tr>
                         <tr>
@@ -88,17 +94,20 @@
                                     <li>
                                         <strong>Otevření sálu: </strong>
                                         <xsl:value-of
-                                            select="format-time(ks:harmonogram/ks:cas_otevreni_salu,'[H01]:[m01]')"/>
+                                            select="format-time(ks:harmonogram/ks:cas_otevreni_salu, '[H01]:[m01]')"
+                                        />
                                     </li>
                                     <li>
                                         <strong>Zahájení soutěže: </strong>
                                         <xsl:value-of
-                                            select="format-time(ks:harmonogram/ks:cas_zahajeni_souteze,'[H01]:[m01]')"/>
+                                            select="format-time(ks:harmonogram/ks:cas_zahajeni_souteze, '[H01]:[m01]')"
+                                        />
                                     </li>
                                     <li>
                                         <strong>Konec soutěže: </strong>
                                         <xsl:value-of
-                                            select="format-time(ks:harmonogram/ks:cas_konce_souteze,'[H01]:[m01]')"/>
+                                            select="format-time(ks:harmonogram/ks:cas_konce_souteze, '[H01]:[m01]')"
+                                        />
                                     </li>
                                 </ul>
                             </td>
@@ -106,7 +115,13 @@
                         <tr>
                             <th>Termín přihlášení</th>
                             <td>
-                                <strong><i><xsl:value-of select="format-dateTime(ks:termin_prihlaseni,' [M]. [D]. [Y],  [H01]:[m01] ')"/></i></strong>
+                                <strong>
+                                    <i>
+                                        <xsl:value-of
+                                            select="format-dateTime(ks:termin_prihlaseni, ' [M]. [D]. [Y],  [H01]:[m01] ')"
+                                        />
+                                    </i>
+                                </strong>
                             </td>
                         </tr>
                         <tr>
@@ -136,7 +151,11 @@
         <div class="porota">
             <ul>
                 <li>
-                    <xsl:value-of select="ks:jmeno"/> <xsl:text> </xsl:text> <xsl:value-of select="ks:prijmeni"/> <xsl:text> – </xsl:text> <xsl:value-of select="ks:mesto"/>
+                    <xsl:value-of select="ks:jmeno"/>
+                    <xsl:text> </xsl:text>
+                    <xsl:value-of select="ks:prijmeni"/>
+                    <xsl:text> – </xsl:text>
+                    <xsl:value-of select="ks:mesto"/>
                 </li>
             </ul>
         </div>
@@ -145,14 +164,30 @@
     <!-- Sekce kategorii-->
     <xsl:template match="ks:kategorie">
         <li>
-            <strong><xsl:value-of select="concat(ks:vekova_kategorie,' – ', string-join(ks:vykonostni_trida, ''), ' ', ks:disciplina , ' (', @typ,')')"/></strong>
+            <xsl:choose>
+                <xsl:when test="ks:kategorie/@typ = 'liga'">
+                    <strong>
+                        <xsl:value-of
+                            select="concat(ks:vekova_kategorie, ' – ', ks:disciplina, ' (', @typ, ')')"
+                        />
+                    </strong>
+                </xsl:when>
+                <xsl:otherwise>
+
+                    <strong>
+                        <xsl:value-of
+                            select="concat(ks:vekova_kategorie, ' – ', string-join(ks:vykonostni_trida, ''), ' ', ks:disciplina, ' (', @typ, ')')"
+                        />
+                    </strong>
+                </xsl:otherwise>
+            </xsl:choose>
             <table>
                 <thead>
                     <tr>
                         <th>Partner</th>
                         <th>Partnerka</th>
                         <th>Klub</th>
-                        <th></th>
+                        <th/>
                     </tr>
                 </thead>
                 <tbody>
@@ -184,7 +219,7 @@
                 <a href="{concat('detail_', $par_id, '.html')}">Detail</a>
             </td>
         </tr>
-        
+
         <!-- Vygenerovaní html dokumentu pro každý pár -->
         <xsl:result-document href="{concat('detail_', $par_id, '.html')}" format="html5">
             <html lang="cs">
@@ -193,27 +228,35 @@
                     <link rel="stylesheet" href="profileDetail.css"/>
                 </head>
                 <body>
-                    <h1><a href="javascript:history.back()">Kalendář soutěží</a></h1>
+                    <h1>
+                        <a href="javascript:history.back()">Kalendář soutěží</a>
+                    </h1>
                     <div class="home-container">
                         <div class="home-container1">
-                            <img
-                                src="{$par/ks:partnerka/ks:foto/@src}"
-                                alt="image"
-                                class="home-image"
-                            />
-                            <span class="home-text"><xsl:value-of select="$par/ks:partnerka/ks:jmeno"/></span>
-                            <span class="home-text1"><xsl:value-of select="$par/ks:partnerka/ks:prijmeni"/></span>
-                            <span class="home-text2"><xsl:value-of select="$par/ks:partnerka/ks:email"/></span>
+                            <img src="{$par/ks:partnerka/ks:foto/@src}" alt="image"
+                                class="home-image"/>
+                            <span class="home-text">
+                                <xsl:value-of select="$par/ks:partnerka/ks:jmeno"/>
+                            </span>
+                            <span class="home-text1">
+                                <xsl:value-of select="$par/ks:partnerka/ks:prijmeni"/>
+                            </span>
+                            <span class="home-text2">
+                                <xsl:value-of select="$par/ks:partnerka/ks:email"/>
+                            </span>
                         </div>
                         <div class="home-container2">
-                            <img
-                                src="{$par/ks:partner/ks:foto/@src}"
-                                alt="image"
-                                class="home-image1"
-                            />
-                            <span class="home-text3"><xsl:value-of select="$par/ks:partner/ks:jmeno"/></span>
-                            <span class="home-text4"><xsl:value-of select="$par/ks:partner/ks:prijmeni"/></span>
-                            <span class="home-text5"><xsl:value-of select="$par/ks:partner/ks:email"/></span>
+                            <img src="{$par/ks:partner/ks:foto/@src}" alt="image"
+                                class="home-image1"/>
+                            <span class="home-text3">
+                                <xsl:value-of select="$par/ks:partner/ks:jmeno"/>
+                            </span>
+                            <span class="home-text4">
+                                <xsl:value-of select="$par/ks:partner/ks:prijmeni"/>
+                            </span>
+                            <span class="home-text5">
+                                <xsl:value-of select="$par/ks:partner/ks:email"/>
+                            </span>
                         </div>
                     </div>
                 </body>

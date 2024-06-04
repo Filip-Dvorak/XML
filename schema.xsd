@@ -33,9 +33,9 @@
     <xs:complexType name="parType">
         <xs:sequence>
             <xs:element name="trida" type="vykonostniTridaType"></xs:element>
-            <xs:element name="partner" type="partnerType"  maxOccurs="1"/>
-            <xs:element name="partnerka" type="partnerType"  maxOccurs="1"/>
-            <xs:element name="klub" type="klubType" maxOccurs="1"/>
+            <xs:element name="partner" type="partnerType"  />
+            <xs:element name="partnerka" type="partnerType"  />
+            <xs:element name="klub" type="klubType" />
         </xs:sequence>
         <xs:attribute name="id" type="idType" use="required"/>
     </xs:complexType>
@@ -54,12 +54,12 @@
     
     <xs:complexType name="partnerType">
         <xs:sequence>
-            <xs:element name="idt" type="idType"/>
-            <xs:element name="jmeno" type="xs:string"/>
-            <xs:element name="prijmeni" type="xs:string"/>
-            <xs:element name="datum_narozeni" type="xs:date"/>
-            <xs:element name="email" type="emailType"/>
-            <xs:element name="foto" type="fotoType">
+            <xs:element name="idt" type="idType" />
+            <xs:element name="jmeno" type="xs:string" />
+            <xs:element name="prijmeni" type="xs:string" />
+            <xs:element name="datum_narozeni" type="xs:date" />
+            <xs:element name="email" type="emailType" />
+            <xs:element name="foto" type="fotoType" >
             </xs:element>
         </xs:sequence>
     </xs:complexType>
@@ -77,12 +77,12 @@
     
     <xs:complexType name="soutezType">
         <xs:sequence>
-            <xs:element name="nazev" type="xs:string"/>
-            <xs:element name="datum" type="xs:date"/>
-            <xs:element name="adresa" type="adresaType"/>
-            <xs:element name="harmonogram" type="harmonogramType"/>
-            <xs:element name="termin_prihlaseni" type="xs:dateTime"/>
-            <xs:element name="porota" type="porotaType"/>
+            <xs:element name="nazev" type="xs:string" />
+            <xs:element name="datum" type="xs:date" />
+            <xs:element name="adresa" type="adresaType" />
+            <xs:element name="harmonogram" type="harmonogramType" />
+            <xs:element name="termin_prihlaseni" type="xs:dateTime" />
+            <xs:element name="porota" type="porotaType" />
             <xs:element name="kategorie" type="kategorieType" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
@@ -122,7 +122,7 @@
     <xs:complexType name="kategorieType">
         <xs:sequence>
             <xs:element name="vekova_kategorie" type="xs:string"/>
-            <xs:element name="vykonostni_trida" type="vykonostniTridaType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="vykonostni_trida" type="vykonostniTridaType" minOccurs="0" maxOccurs="3"/>
             <xs:element name="disciplina" type="disciplinaType"/>
             <xs:element name="prihlasene_pary" type="prihlaseneParyType">
             </xs:element>
@@ -133,7 +133,7 @@
     
     <xs:complexType name="prihlaseneParyType">
         <xs:sequence>
-            <xs:element name="par_id" type="idType" maxOccurs="unbounded"/>
+            <xs:element name="par_id" type="idType" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
     
@@ -146,7 +146,6 @@
     
     <xs:simpleType name="vykonostniTridaType">
         <xs:restriction base="xs:string">
-            <xs:enumeration value=""></xs:enumeration>
             <xs:enumeration value="E"></xs:enumeration>
             <xs:enumeration value="D"></xs:enumeration>
             <xs:enumeration value="C"></xs:enumeration>

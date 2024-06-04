@@ -84,7 +84,7 @@
             <klub divize="jihoceska">LaStDance</klub>
         </par>
         <par id="5">
-            <trida>M</trida>
+            <trida>E</trida>
             <partner>
                 <idt>666</idt>
                 <jmeno>Vladislav</jmeno>
@@ -141,7 +141,6 @@
             <prihlasene_pary>
                 <par_id>1</par_id>
                 <par_id>2</par_id>
-                <par_id>5</par_id>
             </prihlasene_pary>
         </kategorie>
         <kategorie typ="liga">
@@ -186,6 +185,43 @@
             <disciplina>STT</disciplina>
             <prihlasene_pary>
                 <par_id>4</par_id>
+            </prihlasene_pary>
+        </kategorie>
+    </soutez>
+    <soutez>
+        <nazev>Velká cena MZ Dance Tým</nazev>
+        <datum>2024-07-20</datum>
+        <adresa>
+            <lokace>Národní dům na Vinohradech</lokace>
+            <ulice>Náměstí míru</ulice>
+            <cislo_popisne>123</cislo_popisne>
+            <mesto>Praha</mesto>
+            <psc>102 00</psc>
+        </adresa>
+        <harmonogram>
+            <cas_otevreni_salu>08:00:00</cas_otevreni_salu>
+            <cas_zahajeni_souteze>09:30:00</cas_zahajeni_souteze>
+            <cas_konce_souteze>17:00:00</cas_konce_souteze>
+        </harmonogram>
+        <termin_prihlaseni>2024-06-30T23:00:00</termin_prihlaseni>
+        <porota>
+            <porotce>
+                <jmeno>Jaroslav</jmeno>
+                <prijmeni>Ječmen</prijmeni>
+                <mesto>Pardubice</mesto>
+            </porotce>
+            <porotce>
+                <jmeno>Ludvík</jmeno>
+                <prijmeni>Ječmínek</prijmeni>
+                <mesto>Plzeň</mesto>
+            </porotce>
+        </porota>
+        <kategorie typ="postupova">
+            <vekova_kategorie>Dospělí</vekova_kategorie>
+            <vykonostni_trida>E</vykonostni_trida>
+            <disciplina>LAT</disciplina>
+            <prihlasene_pary>
+                <par_id>5</par_id>
             </prihlasene_pary>
         </kategorie>
     </soutez>
